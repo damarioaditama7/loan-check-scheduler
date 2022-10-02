@@ -14,4 +14,5 @@ Scheduler for checking loan due date
 # How to check the scheduler work
   1. Scheduler change the data when loan_datetime value is 0 (zero).
   2. Use 'Force Expiry Loan Due Date' collection to set loan_datetime to zero.
-  3. Wait the scheduler work!
+  3. Wait the scheduler work.
+  4. loan_datetime value will be extend to 30 days and the new total_amount (that customer need to pay) added.
