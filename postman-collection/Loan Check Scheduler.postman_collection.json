@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "f5c371e3-0072-496e-8858-e6eea2077405",
+		"name": "Loan Check Scheduler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add New Loan Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/kredivo/check_transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"kredivo",
+						"check_transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Bank Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Force Expiry Loan Due Date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"18\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/loan_request/force_expire",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"loan_request",
+						"force_expire"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
