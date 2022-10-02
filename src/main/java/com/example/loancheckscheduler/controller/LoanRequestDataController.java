@@ -27,9 +27,9 @@ public class LoanRequestDataController {
     }
 
     @PostMapping(value = "force_expire")
-    public String forceExpireLoanDueDate(@RequestBody String id){
-        System.out.println("Id: "+id);
-        JsonObject jsonObject = new GsonBuilder().create().fromJson(id, JsonObject.class);
+    public String forceExpireLoanDueDate(@RequestBody String loanRequestId){
+        System.out.println("Id: "+loanRequestId);
+        JsonObject jsonObject = new GsonBuilder().create().fromJson(loanRequestId, JsonObject.class);
         return loanCheckerService.forceExpireLoanDueDateById(jsonObject);
     }
 }

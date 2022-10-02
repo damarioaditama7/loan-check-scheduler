@@ -64,22 +64,21 @@ public class LoanCheckerService {
         }
     }
 
-    public String forceExpireLoanDueDateById(JsonObject id){
+    public String forceExpireLoanDueDateById(JsonObject loanRequestId){
         try{
-            String stringData = gson.toJson(id);
+            String stringData = gson.toJson(loanRequestId);
             System.out.println("String: " + stringData);
 
             JsonObject loanRequestObject = gson.fromJson(stringData, JsonObject.class);
-            String stringId = loanRequestObject.get("id") != null ? loanRequestObject.get("id").getAsString() : "";
+            String stringLoanRequestId = loanRequestObject.get("loanRequestId") != null ? loanRequestObject.get("loanRequestId").getAsString() : "";
 
-            Long longId = Long.parseLong(stringId);
+            Long longId = Long.parseLong(stringLoanRequestId);
 
             LoanRequestData loanRequestData = loanRequestDataRepository.getLoanRequestById(longId);
-            System.out.println("Data: "+loanRequestData);
             loanRequestData.setLoanDeadline(0);
             loanRequestDataRepository.save(loanRequestData);
         }catch (Exception e){
-            System.out.println("Error: "+e.getMessage());
+            return "Error: "+e.getMessage();
         }
 
         return "Force expiry success";
@@ -100,7 +99,7 @@ public class LoanCheckerService {
         final Integer DUE_DATE_AFTER_PENALTY = 30;
 
         Double penaltyAmount = loanRequestsData.getLoanAmount() * PENALTY_PERCENTAGE;
-        Double totalAmount = loanRequestsData.getTotalAmount() + loanRequestsData.getPenaltyAmount();
+        Double totalAmount = loanRequestsData.getTotalAmount() + penaltyAmount;
 
         loanRequestsData.setPenaltyAmount(penaltyAmount);
         loanRequestsData.setTotalAmount(totalAmount);
