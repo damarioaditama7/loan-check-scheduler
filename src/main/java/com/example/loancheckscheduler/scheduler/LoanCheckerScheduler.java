@@ -1,7 +1,6 @@
 package com.example.loancheckscheduler.scheduler;
 
 import com.example.loancheckscheduler.service.LoanCheckerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

@@ -10,4 +10,6 @@ public interface LoanRequestDataRepository extends JpaRepository<LoanRequestData
     @Query(value = "SELECT * FROM loan_request_data WHERE loan_permission_status like CONCAT('%', :status, '%')", nativeQuery = true)
     List<LoanRequestData> getApprovedLoanRequest(String status);
 
+    @Query(value = "SELECT * FROM loan_request_data WHERE id = :id", nativeQuery = true)
+    LoanRequestData getLoanRequestById(Long id);
 }

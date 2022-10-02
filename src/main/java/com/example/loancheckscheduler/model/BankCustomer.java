@@ -40,4 +40,16 @@ public class BankCustomer {
     private String phoneNumber;
 
     private Double income;
+
+    @Override
+    public String toString() {
+        return "BankCustomer{" +
+                "id=" + id +
+                ", loanRequests=" + loanRequests +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", income=" + income +
+                '}';
+    }
 }

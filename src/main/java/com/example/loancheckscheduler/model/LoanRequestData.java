@@ -46,4 +46,19 @@ public class LoanRequestData {
     private Date loanDate;
 
     private Integer loanDeadline;
+
+    @Override
+    public String toString() {
+        return "LoanRequestData{" +
+                "id=" + id +
+                ", customerId=" + customerId +
+                ", loanAmount=" + loanAmount +
+                ", penaltyAmount=" + penaltyAmount +
+                ", paidAmount=" + paidAmount +
+                ", totalAmount=" + totalAmount +
+                ", loanPermissionStatus=" + loanPermissionStatus +
+                ", loanDate=" + loanDate +
+                ", loanDeadline=" + loanDeadline +
+                '}';
+    }
 }
