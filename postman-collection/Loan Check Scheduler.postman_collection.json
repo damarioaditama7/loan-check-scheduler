@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "f5c371e3-0072-496e-8858-e6eea2077405",
+		"name": "Loan Check Scheduler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add New Loan Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"customerId\": \"1\",\r\n        \"loanAmount\": \"5000000.00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/loan_request/add_data",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"loan_request",
+						"add_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Bank Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Gunawan\",\r\n    \"address\": \"Jl. Indah\",\r\n    \"income\": 12000000.00,\r\n    \"phoneNumber\": \"0817882900192\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/customer/add_customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"customer",
+						"add_customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Force Expiry Loan Due Date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"loanRequestId\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/loan_request/force_expire",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"loan_request",
+						"force_expire"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
