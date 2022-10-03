@@ -4,6 +4,7 @@ Scheduler for checking loan due date
   
 # Information
 - The scheduler always run the Loan Check every 1 minutes.
+- Schema name: loan_checker_db
 
 # How to add data (BankCustomer first followed by LoanRequestData)
   1. Import postman collection, located in postman-collection folder.
